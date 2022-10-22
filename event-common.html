@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clicking-method"></p>
+    <input id="input-data" type="text">
+    <button id="update-data">update</button>
+    <button onclick="handleJustFunctionClick()">Just function</button>
+    <button id="handle-even">Direct add Even Lisiner</button>
+
+
+    <script>
+        // using dunction
+        function handleJustFunctionClick(){
+            const clickingMethod = document.getElementById('clicking-method');
+            clickingMethod.innerText = 'set by using function';
+        }
+
+        //using direct 
+        document.getElementById('handle-even').addEventListener('click', function(){
+            const clickingMethod = document.getElementById('clicking-method');
+            clickingMethod.innerText = 'set by using even lisiner';
+        })
+
+        //using direct
+        document.getElementById('update-data').addEventListener('click', function(){
+            const inputData = document.getElementById('input-data');
+            inputData.innerText = inputData.Value;
+        })
+    </script>
+</body>
+</html>

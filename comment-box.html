@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Comment Box</title>
+</head>
+
+<body class="bg-success text-white">
+    <section class="container mt-5">
+        <h2>Add your comment please..!!</h2>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, rem. Vel assumenda ducimus cumque
+                exercitationem. Modi, architecto. Officiis hic provident saepe suscipit accusantium assumenda voluptas
+                modi ipsa, tempora perferendis nisi!</p>
+            <p>Fugiat, quo nostrum possimus facilis blanditiis vel totam dolorem, quis voluptate assumenda porro libero
+                quod hic harum molestiae recusandae. Veritatis eius obcaecati ab eligendi in porro autem nostrum tempora
+                amet.</p>
+            <p>Laboriosam aspernatur soluta fugit optio pariatur error et natus, voluptate, consectetur qui ullam
+                cumque? Ducimus excepturi rem, eius ab doloribus omnis dolor vitae eveniet, totam voluptas ad
+                repudiandae perferendis officia?</p>
+        </div>
+        <div>
+            <h3 class="mt-5">add your comment please!!</h3>
+            <div class="mb-2">
+                <textarea class="form-control" id="new-comment" rows="3"></textarea>
+            </div>
+            <br>
+            <button id="submit-comment" type="button" class="btn btn-primary">Post</button>
+        </div>
+    </section>
+
+    <script>
+        // 1. add even handler
+        document.getElementById('submit-comment').addEventListener('click', function () {
+
+            // 2. get user comment
+            const textComment = document.getElementById('new-comment');
+            const userComment = textComment.value;
+            console.log(userComment)
+
+            // 3. create new paragraph
+            const newComment = document.createElement('p');
+            newComment.innerText = userComment;
+
+            // 4. append the comment 
+            const commentContainer = document.getElementById('comment-container');
+            commentContainer.appendChild(newComment);
+
+            // 5.clean the comment box
+            textComment.value = '';
+        })
+    </script>
+
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>
